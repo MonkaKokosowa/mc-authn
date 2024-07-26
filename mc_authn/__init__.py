@@ -28,7 +28,7 @@ def load_config() -> dict:
         exit(127)
 
     with (config_path / 'auth_config.yml').open(encoding='utf-8') as f:
-        yml = yaml.safe_load(f)
+        yml = yaml.YAML(typ='safe')
 
     return yml
 
